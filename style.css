@@ -4,19 +4,28 @@
     background-color: blanchedalmond;
     color: blueviolet;
 }
+main{
+    flex-grow: 1;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
 header{
-    padding: 18px;
+    padding: 4px;
     background-color: rgb(131, 189, 146);
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 h1{
-    justify-content: flex-end;
     background-color:  rgb(131, 189, 146);
 }
 ul{
     background-color:  rgb(131, 189, 146);
     display: inline-block;
-    justify-content: flex-end;
 }
 li{
     background-color:  rgb(131, 189, 146);
@@ -26,6 +35,17 @@ li{
 article{
     display: flex;
     flex-wrap: wrap;
+}
+#hero{
+    background-image: url(hero-img.png);
+    height: 240px;
+    border: 0;
+    margin: 0;
+}
+#hero:hover{
+    scale: 1;
+    cursor: auto;
+    background-color: blanchedalmond;
 }
 div{
     margin: 10px;
@@ -41,7 +61,6 @@ div:hover{
     scale: 1.2;
 }
 footer{
-    margin-top: 390px;
     padding: 8px;
     background-color:rgb(131, 189, 146) ;
     font-size: 14px;
