@@ -1,28 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-         <ul>
-            <li>Alexander</li>
-            <li>April</li>
-            <li>Veronica</li>
-            <li>Chris</li>
-            <li>Myles</li>
-         </ul>
-        <h1>PokeDex</h1>
-    </header>
-    <img src="Screenshot 2023-09-28 205801.png" alt="pokemon">
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/assets/css/global.css" />
+		<link rel="stylesheet" href="/assets/css/pokedex.css" />
+		<title>Pokedex</title>
+	</head>
+	<body>
+		<section class="content">
+			<h1>Pokedex</h1>
 
-    <article id="main"></article>
-    
-    <script src="script.js"></script>
+			<ol id="pokemonList" class="pokemons"></ol>
 
-    <footer>copyright @2023 Orlando, FL</footer>
-</body>
+			<div class="pagination">
+				<button id="loadMoreButton" type="button">Load more +</button>
+			</div>
+		</section>
+		<script src="./assets/js/pokemon-model.js"></script>
+		<script src="./assets/js/pokemon-api.js"></script>
+		<script src="./assets/js/main.js"></script>
+	</body>
 </html>
