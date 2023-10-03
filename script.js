@@ -1,7 +1,7 @@
 var list = document.getElementById("main")
 
 function getApi() {
-  var requestUrl = 'https://pokeapi.co/api/v2/pokemon';
+  var requestUrl = 'https://pokeapi.co/api/v2/ability?limit=900';
 
   fetch(requestUrl)
     .then(function (response) {

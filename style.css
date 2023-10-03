@@ -12,10 +12,11 @@ header{
     padding: 5px;
     background-color: #EE4035;
     border-bottom: black solid 10px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
     }
 h1{
-    display: flex;
-    justify-content: center;
     background-color:  #EE4035;
     text-shadow: 1px 10px 1px #0A285F;
     font-size: 75px;
@@ -23,17 +24,11 @@ h1{
 }
 ul{
     background-color:  #EE4035;
-    display: inline-block;
-    justify-content: flex-end;
 }
 li{
     background-color:  #EE4035;
     list-style: none;
-    font-size: 25px;
-}
-article{
-    display: flex;
-    flex-wrap: wrap;
+    font-size: 20px;
 }
 div{
     margin: 10px;
@@ -70,4 +65,9 @@ img[alt="pokemon"] {
   justify-content: center;
   position: relative;
   padding-left: 10%;
-    }
+}
+.display{
+    display:flex;
+    flex-direction: row;
+    display: inline-block;
+}
