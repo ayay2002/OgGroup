@@ -1,5 +1,5 @@
 *{
-    margin: 0;
+
     font-size: 24px;
     background-color: #919191;
 }
@@ -23,13 +23,16 @@ h1{
 }
 ul{
     background-color:  #EE4035;
-    display: inline-block;
-    justify-content: flex-end;
+    text-align:right;
+    padding-bottom: 1%;
+
 }
-li{
+
+ li{ 
     background-color:  #EE4035;
     list-style: none;
     font-size: 25px;
+    text-align:right;
 }
 article{
     display: flex;
@@ -71,3 +74,4 @@ img[alt="pokemon"] {
   position: relative;
   padding-left: 10%;
     }
+    
