@@ -23,6 +23,90 @@
     </header>
     <img src="pokemon_720.jpg" alt="pokemon" />
     <p class="searchBar" >
+    <section> 
+      <label class="container">Type
+      <!-- Fire, Water, Normal, Grass, Electric, Ice, Fighting, Poison, Ground, Flying, Sidekick, Bug, Rock, Ghost, Dragon, Dark, Steel, Fairy  -->
+        <input type="checkbox" id="checkboxpokemon" checked="checked" >
+        <span class="checkmark"></span>
+     </label>  
+      <!-- Types of Species dropdown -->
+      <select id="PokemonType" style="display:none" >
+        <option value="Fire" >Fire</option>
+        <option value="Water" >Water</option>
+        <option value="Normal" >Normal</option>
+        <option value="Grass" >Grass</option>
+        <option value="Electric" >Electric</option>
+        <option value="Ice" >Ice</option>
+        <option value="Fighting" >Fightin</option>
+        <option value="Posion" >Posion</option>
+        <option value="Ground" >Ground</option>
+        <option value="Flying" >Flying</option>
+        <option value="Sidekick" >Sidekick</option>
+        <option value="Bug" >Bug</option>
+       <option value="Rock" >Rock</option>
+        <option value="Ghost" >Ghost</option>
+        <option value="Dragon" >Dragon</option>
+        <option value="Dark" >Dark</option>
+        <option value="Steel" >Steel</option>
+        <option value="Fairy" >Fairy</option>
+    </select>
+      
+      <label class="container"> Rarity
+      <!-- Common, Uncommon, Rare, Promo -->
+      <input type="checkbox" id="RarityType" checked="checked">
+      <span class="checkmark"></span>
+    </label>  
+
+        <!-- Types of Rarity dropdown -->
+        <select id="RarityType" style="display:none" >
+          <option value="Common" >Common</option>
+         <option value="Uncommon" >Uncommon</option>
+         <option value="Rare" >Rare</option>
+          <option value="Fairy" >Fairy</option>
+          <option value="Promo" >Promo</option>
+        </select>
+      
+      <label class="container"> Evolution Stages
+      <!-- 1 (med),2 (Lg),3 (mega) -->
+      <input type="checkbox" id="EvolutionType" checked="checked" >
+      <span class="checkmark"></span>
+    </label>  
+
+        <!-- Types of Evolution Stages dropdown -->
+        <select id="EvolutionType" style="display:none" >
+          <option value="1" >1</option>
+         <option value="2" >2</option>
+         <option value="3" >Mega</option>
+        </select>
+      
+      <label class="container">HP 
+      <!-- Health Points Range from 30 to 340 
+         30hp to 100hp, 101hp to 180hp, 181hp to 260hp,  261hp to 340hp-->
+         <input type="checkbox" id="HPType" checked="checked">
+         <span class="checkmark"></span>
+        </label>  
+          <!-- Types of Evolution Stages dropdown -->
+        <select id="HPType" style="display:none" >
+            <option value="30hp-100hp" >30 to 100</option>
+           <option value="101hp-180hp" >101 to 180</option>
+           <option value="181hp-260hp" >181 to 260</option>
+           <option value="261p-340hp" >261 to 3400</option>
+         </select>
+
+      <label class="container"> Attack Type
+      <!-- Physical, Special and Status -->
+      <input type="checkbox" id="AttackType" checked="checked">
+        <span class="checkmark"></span>
+        <!-- Types of Attack dropdown -->
+        <select id="AttackType" style="display:none" >
+          <option value="Physical" >Physical</option>
+          <option value="Special" >Special</option>
+          <option value="Status" >Status</option>
+        </select>
+        <!-- any other items we would like to classify as enter here <label class="container"> XYZ</label>
+      XYZ Sub CAT-->
+      </label>
+    </section>
     <input type="text" id="search" placeholder="Search Pokemon..." />
     </p>
     <article id="main"></article>
