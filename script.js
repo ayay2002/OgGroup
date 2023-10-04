@@ -48,6 +48,38 @@ document.addEventListener("change", function(){
 })
 })
 
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.getElementById("search");
+  const searchButton = document.getElementById("searchButton");
+  const cardResult = document.getElementById("cardResult");
+
+  searchButton.addEventListener("click", () => {
+      const pokemonName = searchInput.value.trim().toLowerCase();
+      if (pokemonName !== "") {
+          fetch(`https://api.pokemontcg.io/v2/cards?q=name:${pokemonName}`)
+              .then(response => response.json())
+              .then(data => {
+                  displayCard(data.data);
+              })
+              .catch(error => {
+                  console.error("Error fetching data: ", error);
+                  cardResult.innerHTML = "An error occurred while fetching data.";
+              });
+      }
+  });
+
+  function displayCard(cards) {
+      if (cards.length > 0) {
+          const card = cards[0];
+          cardResult.innerHTML = `
+              <img src="${card.images.small}">
+          `;
+      } else {
+          cardResult.innerHTML = "Pokémon card not found.";
+      }
+  }
+});
+
 // // Dropdown for the Rarity Type selector line 54 HTML
 // var RarityType
 // document.addEventListener("DOMContentLoaded",function(){
