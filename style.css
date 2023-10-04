@@ -1,5 +1,5 @@
 *{
-    margin: 0;
+
     font-size: 24px;
     background-color: #919191;
 }
@@ -25,7 +25,8 @@ h1{
 ul{
     background-color:  #EE4035;
 }
-li{
+
+ li{ 
     background-color:  #EE4035;
     list-style: none;
     font-size: 20px;
