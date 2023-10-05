@@ -19,8 +19,8 @@ function getApi() {
       for (var i = 0; i < data.results.length; i++) {
         console.log(data.results[i].name)
         var name = document.createElement("div")
-        name.textContent = data.results[i].name;
-        list.appendChild(name)
+        // name.textContent = data.results[i].name;
+        // list.appendChild(name)
       }
     });
 }
