@@ -1,8 +1,7 @@
 *{
-
+    margin: 0;
     font-size: 24px;
     background-color: #919191;
-    margin: 0;
 }
 header{
     font-family: 'Pokemon Solid', sans-serif;
@@ -12,7 +11,7 @@ header{
     text-shadow: 1px 4px 1px #0A285F;
     padding: 5px;
     background-color: #EE4035;
-    padding: 0px;
+    border-bottom: black solid 10px;
     }
 h1{
     display: flex;
@@ -20,28 +19,21 @@ h1{
     background-color:  #EE4035;
     text-shadow: 1px 10px 1px #0A285F;
     font-size: 75px;
-    padding: 0px;
-    margin-top: -30px;
+    padding-left: 10%;
 }
 ul{
     background-color:  #EE4035;
-    text-align:right;
-    padding-bottom: 1%;
-    margin-top: -180px;
-
+    padding-right: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
- li{ 
+li{
     background-color:  #EE4035;
     list-style: none;
-    font-size: 20px;
-    text-align:right;
-    margin-right: 40px;
-    margin-bottom: -18px;
-}
-#hero{
-    background-image: url(pokemon_720.jpg);
-    height: 180px;
+    font-size: 25px;
+    text-align: right;
+    
 }
 article{
     display: flex;
@@ -56,9 +48,8 @@ div{
     padding: 10px;
 }
 div:hover{
-    background-color: #FFCB05;
     cursor: pointer;
-    scale: 1.2;
+    
 }
 footer{
     margin-top: 390px;
@@ -71,7 +62,7 @@ footer{
 img[alt="pokemon"] {
     border-bottom: black solid 10px;
 }
-/* .searchBar{
+.searchBar{
   background-color: #919191;
   border-radius: 100%;
   min-width: 2rem;
@@ -82,5 +73,31 @@ img[alt="pokemon"] {
   justify-content: center;
   position: relative;
   padding-left: 10%;
-    } */
-    
+}
+.hidden {
+    display: none;
+}
+
+.type{
+    font-family: 'Pokemon Solid', sans-serif;
+    -webkit-text-stroke-color: #3C5AA6;
+    -webkit-text-stroke-width: 2.5px;
+    color: #FFCB05;
+    text-shadow: 1px 4px 1px #0A285F;
+    word-spacing: 5px;
+    letter-spacing: 3px;
+    font-size: 50px;
+    padding: 5px;
+}
+
+label{
+    font-family: 'Pokemon Solid', sans-serif;
+    -webkit-text-stroke-color: #3C5AA6;
+    -webkit-text-stroke-width: 2.5px;
+    color: #FFCB05;
+    text-shadow: 1px 4px 1px #0A285F;
+    word-spacing: 5px;
+    letter-spacing: 3px;
+    font-size: 50px;
+    padding: 5px;
+}
