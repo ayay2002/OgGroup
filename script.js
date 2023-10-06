@@ -19,8 +19,8 @@ function getApi() {
       for (var i = 0; i < data.results.length; i++) {
         console.log(data.results[i].name)
         var name = document.createElement("div")
-        name.textContent = data.results[i].name;
-        list.appendChild(name)
+        //name.textContent = data.results[i].name;
+        //list.appendChild(name)
       }
     });
 }
@@ -48,96 +48,63 @@ document.addEventListener("change", function(){
 })
 })
 
-document.addEventListener("DOMContentLoaded", () => {
-  const searchInput = document.getElementById("search");
-  const searchButton = document.getElementById("searchButton");
-  const cardResult = document.getElementById("cardResult");
+// Define the API endpoint and your API key (you need to obtain your own API key)
+const apiUrl = 'https://api.pokemontcg.io/v2/cards';
+const apiKey = 'a5277141-4d06-429e-9252-9160e8abfc7f';
 
-  searchButton.addEventListener("click", () => {
-      const pokemonName = searchInput.value.trim().toLowerCase();
-      if (pokemonName !== "") {
-          fetch(`https://api.pokemontcg.io/v2/cards?q=name:${pokemonName}`)
-              .then(response => response.json())
-              .then(data => {
-                  displayCard(data.data);
-              })
-              .catch(error => {
-                  console.error("Error fetching data: ", error);
-                  cardResult.innerHTML = "An error occurred while fetching data.";
-              });
+/// Select elements from the HTML
+const typeSelect = document.getElementById('typeSelect');
+const fetchButton = document.getElementById('fetchButton');
+const cardList = document.getElementById('cardList');
+
+// Function to fetch Pokémon cards by type
+async function fetchPokemonCardsByType(type) {
+  try {
+      const response = await fetch(`${apiUrl}?q=types:${type}`, {
+          headers: {
+              'X-Api-Key': apiKey
+          }
+      });
+
+      if (!response.ok) {
+          throw new Error(`API request failed with status ${response.status}`);
       }
+
+      const data = await response.json();
+      return data.data;
+  } catch (error) {
+      console.error('Error fetching data:', error);
+  }
+}
+
+// Function to display cards
+function displayCards(cards) {
+  cardList.innerHTML = ''; // Clear the previous cards
+
+  cards.forEach(card => {
+      const cardImage = document.createElement('img');
+      cardImage.src = card.images.small;
+      var name=card.nationalPokedexNumbers;
+      cardImage.setAttribute('data-number', name);
+      cardList.appendChild(cardImage);
   });
+}
 
-  function displayCard(cards) {
-      if (cards.length > 0) {
-          const card = cards[0];
-          cardResult.innerHTML = `
-              <img src="${card.images.small}">
-          `;
-      } else {
-          cardResult.innerHTML = "Pokémon card not found.";
-      }
+// Event listener for the "Fetch Cards" button
+fetchButton.addEventListener('click', async () => {
+  const selectedType = typeSelect.value;
+  const cards = await fetchPokemonCardsByType(selectedType);
+  if (cards) {
+      displayCards(cards);
   }
 });
 
-// // Dropdown for the Rarity Type selector line 54 HTML
-// var RarityType
-// document.addEventListener("DOMContentLoaded",function(){
-// checkboxpokemon.addEventListener("change",
-// function(){
-//   RarityType= dropdown.value
-//   console.log (RarityType)
-
-//   if(this.checked){
-// dropdown.style.display="block"
-//    }
-//    else{
-// dropdown.style.display="none"
-//  }
-// })
-
-// Dropdown for the Evolution Type selector line 68 HTML
-
-// var EvolutionType
-// document.addEventListener("DOMContentLoaded",function(){
-// checkboxpokemon.addEventListener("change",
-//   function(){
-// EvolutionTypeype= dropdown.value
-// console.log (EvolutionType)
-
-//   if(this.checked){
-// dropdown.style.display="block"
-//   }
-//   else{
-//     dropdown.style.display="none"
-//   }
-// })
-// // Dropdown for the HP Type selector line 80 HTML
-// var HPType
-// document.addEventListener("DOMContentLoaded",function(){
-// checkboxpokemon.addEventListener("change",
-//   function(){
-// HPType= dropdown.value
-// console.log (HPType)
-
-//   if(this.checked){
-// dropdown.style.display="block"
-//   }
-//   else{
-//     dropdown.style.display="none"
-//   }
-// })
-// // Dropdown for the Attack Type selector line 93 HTML
-// var AttackType
-// document.addEventListener("DOMContentLoaded",function(){
-// checkboxpokemon.addEventListener("change",
-//   function(){
-// AttackTypeype= dropdown.value
-// console.log (AttackType)
-
-//   if(this.checked){
-// dropdown.style.display="block"
-//   }
-//   else{
-//     dropdown.style.display="none"
-//   }
+// Populate the type select dropdown (optional)
+const types = ["Colorless", "Darkness", "Dragon", "Fairy", "Fighting", "Fire", "Grass", "Lightning", "Metal", "Psychic", "Water"];
+types.forEach(type => {
+  const option = document.createElement('option');
+  option.value = type;
+  option.textContent = type;
+  typeSelect.appendChild(option);
+});
+  
