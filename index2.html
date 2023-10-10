@@ -8,7 +8,7 @@
       href="https://fonts.cdnfonts.com/css/pokemon-solid"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style2.css" />
   </head>
   <body>
     <header class="gradient" >
@@ -21,18 +21,23 @@
         <li>Myles</li>
       </ul>
     </header>
-    <img src="pokemon_720.jpg" alt="pokemon" />
-    <p class="searchBar" >
-    <section> 
-    <label for="typeSelect">Select a Pokémon Type:</label>
-    <select id="typeSelect"></select>
-    <button id="fetchButton">Fetch Cards</button>
-    <div id="cardList"></div>
-    </section>
-    </p>
-    <article id="main"></article>
-        <article id="cardResult"></article>
-    <script src="script.js"></script>
+    <img src="Pokemon.jpeg" alt="pokemon" />
+    <div class="split-container">
+      <div class="left">
+          <p class="searchBar">
+              <section>
+                  <label for="typeSelect">Select a Pokémon Type:</label>
+                  <select id="typeSelect"></select>
+                  <button id="fetchButton">Fetch Cards</button>
+                  <div id="cardList"></div>
+              </section>
+          </p>
+      </div>
+      <div class="right">
+          <div id="pokemonInfo"></div>
+      </div>
+  </div>
+    <script src="script2.js"></script>
     <footer>copyright @2023 Orlando, FL</footer>
   </body>
 </html>
