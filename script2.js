@@ -97,9 +97,6 @@ async function fetchPokemonStatistics(cardNumber) {
     spriteElement.alt = `Sprite of ${data.name}`;
     spriteElement.setAttribute("height", "240px");
 
-    //Update the size of the spriteElement based on window width
-    const updateSpriteSize = document.createElement("img");
-
 
     // Create elements to display Pokémon information
     const nameElement = document.createElement("h2");
