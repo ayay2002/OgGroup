@@ -62,11 +62,17 @@ function displayCards(cards) {
     const cardImage = document.createElement("img");
     cardImage.src = card.images.small;
     const cardNumber = card.nationalPokedexNumbers; // Get the card number
+// if (cardNumber.split(",").length > 1) {
+//   cardNumber = cardNumber.split(",")[0]
+// }
+
+
     cardImage.setAttribute("data-number", cardNumber);
 
     // Add a click event listener to each card image
     cardImage.addEventListener("click", () => {
       fetchPokemonStatistics(cardNumber); // Fetch additional information
+      window.location.href = "#poketop"
     });
 
     cardList.appendChild(cardImage);
@@ -75,8 +81,10 @@ function displayCards(cards) {
 
 // Function to fetch Pokémon statistics from PokeAPI
 async function fetchPokemonStatistics(cardNumber) {
+  
   try {
-    const pokeApiUrl = `https://pokeapi.co/api/v2/pokemon/${cardNumber}`;
+    console.log(cardNumber)
+    const pokeApiUrl = `https://pokeapi.co/api/v2/pokemon/${cardNumber[0]}`;
     const response = await fetch(pokeApiUrl);
     if (!response.ok) {
       throw new Error("Unable to fetch Pokémon statistics.");
@@ -87,19 +95,15 @@ async function fetchPokemonStatistics(cardNumber) {
     const spriteElement = document.createElement("img");
     spriteElement.src = data.sprites.front_default;
     spriteElement.alt = `Sprite of ${data.name}`;
-
+    spriteElement.setAttribute("height", "240px");
     // Create elements to display Pokémon information
     const nameElement = document.createElement("h2");
     nameElement.textContent = `Name: ${data.name}`;
-    
-  
 
     const typesElement = document.createElement("p");
     typesElement.textContent = `Types: ${data.types
       .map((type) => type.type.name)
       .join(", ")}`;
-
-   
 
     const statsElement = document.createElement("p");
     statsElement.textContent = "Stats:";
@@ -107,15 +111,13 @@ async function fetchPokemonStatistics(cardNumber) {
       statsElement.textContent += `\n${stat.stat.name}: ${stat.base_stat}`;
     });
 
-    
-
     // Clear the previous information if any
     infoContainer.innerHTML = "";
 
     // Append the elements to the info container
     infoContainer.appendChild(nameElement);
-    infoContainer.appendChild(typesElement);
     infoContainer.appendChild(spriteElement);
+    infoContainer.appendChild(typesElement);
     infoContainer.appendChild(statsElement);
   } catch (error) {
     console.error(error);
@@ -151,6 +153,3 @@ types.forEach((type) => {
   option.textContent = type;
   typeSelect.appendChild(option);
 });
-
-
-
