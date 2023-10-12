@@ -24,7 +24,7 @@ h1 {
 ul {
   background-color: #ee4035;
   padding-right: 15px;
-  margin-top: -220px;
+  margin-top: -115px;
   margin-bottom: 10px;
 }
 
@@ -35,7 +35,9 @@ li {
   text-align: right;
   display: flex;
   justify-content: flex-end;
+ 
 }
+
 article {
   display: flex;
   flex-wrap: wrap;
@@ -210,3 +212,61 @@ h2, p{
   .split-container{flex-direction: column;}
   .h2{font-size: 20px;}
 }
+
+@media (max-width: 600px) {
+  img { width: 100%; } /* Adjust image width to fit the phone screen */
+  label { font-size: 20px; } 
+  h1{
+    font-size: 75px;
+    justify-content: left;
+  }
+  li{
+    font-size:15px;
+    padding-right: -10px;
+  }
+  #cardlist {
+  display:flex;
+  flex-wrap: wrap;
+  }
+
+  #pokemonInfo { font-size: 20px; }
+  #pokemonInfo img {
+    height: 50px;
+  }
+  
+  
+  #typeSelect { 
+  font-family: "Pokemon Solid", sans-serif;
+  -webkit-text-stroke-color: #ffcb05;
+  -webkit-text-stroke-width: 0.5px;
+  color: #3c5aa6;
+  text-shadow: 1px 8px 1px #0a285f;
+    font-size: 10px;
+    padding: 8px;
+  } 
+
+  #fetchButton {
+    -webkit-text-stroke-color: #ffcb05;
+  -webkit-text-stroke-width: 0.5px;
+  color: #3c5aa6;
+  text-shadow: 1px 6px 1px #0a285f;
+    font-size:10px;
+    padding: 10px } 
+  
+  .img
+  .split-container { 
+    display: flex;
+    flex-direction: column-reverse;
+    border: black 2px solid;
+    padding: 20px;
+    margin: -5%; }  
+
+  h2 , p{ font-size: 16px;
+    display:flex;
+    flex-direction: column-reverse;
+    -webkit-text-stroke-color: #ffcb05;
+  -webkit-text-stroke-width: 1px;
+  color: #3c5aa6;
+  text-shadow: 1px 6px 1px #0a285f;
+
+     } 
