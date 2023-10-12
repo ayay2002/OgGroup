@@ -96,6 +96,8 @@ async function fetchPokemonStatistics(cardNumber) {
     spriteElement.src = data.sprites.front_default;
     spriteElement.alt = `Sprite of ${data.name}`;
     spriteElement.setAttribute("height", "240px");
+
+
     // Create elements to display Pokémon information
     const nameElement = document.createElement("h2");
     nameElement.textContent = `Name: ${data.name}`;
