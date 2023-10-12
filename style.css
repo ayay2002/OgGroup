@@ -24,7 +24,7 @@ h1 {
 ul {
   background-color: #ee4035;
   padding-right: 15px;
-  margin-top: 10px;
+  margin-top: -220px;
   margin-bottom: 10px;
 }
 
@@ -200,4 +200,12 @@ h2, p{
   text-transform: capitalize;
   display: flex;
 }
-
+@media screen and (max-width: 1000px) {
+  img {width: 1000px}
+  label {font-size: 30px;}
+  #pokemonInfo {font-size: 30px;}
+  #typeSelect {height: 40px; font-size: 20px;width: 1000px;}
+  #fetchButton{width: 1000px;}
+  .split-container{flex-direction: column;}
+  .h2{font-size: 20px;}
+}
