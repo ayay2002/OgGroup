@@ -24,7 +24,7 @@ h1 {
 ul {
   background-color: #ee4035;
   padding-right: 15px;
-  margin-top: -220px;
+  margin-top: -115px;
   margin-bottom: 10px;
 }
 
@@ -35,7 +35,9 @@ li {
   text-align: right;
   display: flex;
   justify-content: flex-end;
+ 
 }
+
 article {
   display: flex;
   flex-wrap: wrap;
@@ -210,3 +212,37 @@ h2, p{
   .split-container{flex-direction: column;}
   .h2{font-size: 20px;}
 }
+
+@media (max-width: 600px) {
+  img { width: 100%; } /* Adjust image width to fit the phone screen */
+  label { font-size: 20px; } 
+  .h1{
+    font-size: 50%;
+  }
+  .ul{
+    font-size:50% ;
+  }
+  #cardlist {
+    height:30%;
+    width: 22%;
+  display:flex;
+  flex-direction: row;
+  }
+  #pokemonInfo { font-size: 20px; }
+  #pokemonInfo img {
+    height: 50px;
+  }
+  #typeSelect { 
+    font-size: 14px;
+    width: 55%; } 
+  #fetchButton {
+    font-size:14px;
+     width: 55%; } 
+  .img
+  .split-container { 
+    display:flex;
+    flex-direction:column ; } 
+  .h2 , p{ font-size: 14px;
+    display:flex;
+    flex-direction: column;
+     } 
