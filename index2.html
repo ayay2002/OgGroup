@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+     <!-- Meta data added for  SEO by Veronica Lake-->
+     <meta name="description" content="Pokemon library">
+     <meta name="keywords" content="Pokemon, pokemon training, pokemon trainer, pokemon tcg, trading card game, gotta catch 'em all">
+     <!-- End SEO-->
+     <link rel="stylesheet" href="./assets/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.cdnfonts.com/css/pokemon-solid"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div>
+      <img id="loader" src="pikachu.gif" alt="pikachu" />
+    </div>
+    <div id="content">
+      <header class="gradient">
+        <h1>Pokédex</h1>
+        <ul>
+          <li>Alexander</li>
+          <li>April</li>
+          <li>Veronica</li>
+          <li>Chris</li>
+          <li>Myles</li>
+        </ul>
+      </header>
+      <img src="Pokemon.jpeg" alt="pokemon" />
+      <div class="split-container">
+        <div class="left">
+          <p class="searchBar"></p>
+          <section>
+           <label for="typeSelect">Select a Pokémon Type:</label>
+           <div class="wholeSearch"><select id="typeSelect"></select>
+            <button id="fetchButton">Fetch Cards</button>
+           </div>
+            <div id="cardList"></div>
+          </section>
+        </div>
+        <div class="right">
+          <div id="pokemonInfo">Pokémon Info:</div>
+        </div>
+      </div>
+      <script src="script2.js"></script>
+      <footer>copyright @2023 Orlando, FL</footer>
+    </div>
+  </body>
+</html>
