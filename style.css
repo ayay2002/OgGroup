@@ -13,6 +13,7 @@ header {
   background-color: #ee4035;
   border-bottom: black solid 10px;
   letter-spacing: 3px;
+  margin: 0%;
 }
 h1 {
   display: flex;
@@ -20,10 +21,12 @@ h1 {
   background-color: #ee4035;
   text-shadow: 1px 10px 1px #0a285f;
   font-size: 75px;
+  margin: 0%;
 }
 ul {
   background-color: #ee4035;
   padding-right: 15px;
+  margin-top: 10px;
   margin-top: -115px;
   margin-bottom: 10px;
 }
@@ -56,6 +59,7 @@ footer {
 }
 img[alt="pokemon"] {
   border-bottom: black solid 10px;
+  max-width: 100%;
 }
 .wholeSearch {
   display: flex;
@@ -203,15 +207,35 @@ h2, p{
   display: flex;
 }
 
-@media screen and (max-width: 1000px) {
-  img {width: 1000px}
-  label {font-size: 30px;}
-  #pokemonInfo {font-size: 30px;}
-  #typeSelect {height: 40px; font-size: 20px;width: 1000px;}
-  #fetchButton{width: 1000px;}
-  .split-container{flex-direction: column;}
-  .h2{font-size: 20px;}
+@media screen and (max-width: 768px) {
+  header h1 {
+    font-size: 40px;
+  }
+
+  .split-container {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  #pokemonInfo {
+    font-size: 24px;
+  }
+
+  #cardList img {
+    max-width: 50%; /* Reduce the card images' width to 50% */
+    max-height: auto;
+  }
+
+  label {
+    font-size: 16px; /* Reduce the font size of the label element */
+  }
+
+  select {
+    max-width: 100%; /* Ensure the select element fits within its container */
+  }
 }
+
+
 
 @media (max-width: 600px) {
   img { width: 100%; } /* Adjust image width to fit the phone screen */
@@ -270,3 +294,4 @@ h2, p{
   text-shadow: 1px 6px 1px #0a285f;
 
      } 
+
