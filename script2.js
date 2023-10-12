@@ -1,12 +1,3 @@
-//var list = document.getElementById("main")
-//var dropdown= document.getElementById("PokemonType")
-// var RarityType= document.getElementById("RarityType")
-// var EvolutionType= document.getElementById("EvolutionType")
-// var HPType= document.getElementById("HPType")
-// var AttackType= document.getElementById ("AttackType")
-//var checkboxpokemon =document.getElementById ("checkboxpokemon")
-
-// Define the API endpoint and your API key (you need to obtain your own API key)
 // Define the API endpoint and your API key (you need to obtain your own API key)
 var loader;
 
@@ -93,32 +84,42 @@ async function fetchPokemonStatistics(cardNumber) {
 
     const data = await response.json();
 
-    // Display the retrieved information in the UI
-    displayPokemonInfo(data);
+    const spriteElement = document.createElement("img");
+    spriteElement.src = data.sprites.front_default;
+    spriteElement.alt = `Sprite of ${data.name}`;
+
+    // Create elements to display Pokémon information
+    const nameElement = document.createElement("h2");
+    nameElement.textContent = `Name: ${data.name}`;
+    
+  
+
+    const typesElement = document.createElement("p");
+    typesElement.textContent = `Types: ${data.types
+      .map((type) => type.type.name)
+      .join(", ")}`;
+
+   
+
+    const statsElement = document.createElement("p");
+    statsElement.textContent = "Stats:";
+    data.stats.forEach((stat) => {
+      statsElement.textContent += `\n${stat.stat.name}: ${stat.base_stat}`;
+    });
+
+    
+
+    // Clear the previous information if any
+    infoContainer.innerHTML = "";
+
+    // Append the elements to the info container
+    infoContainer.appendChild(nameElement);
+    infoContainer.appendChild(typesElement);
+    infoContainer.appendChild(spriteElement);
+    infoContainer.appendChild(statsElement);
   } catch (error) {
     console.error(error);
   }
-}
-
-// Function to display Pokémon information in the UI
-function displayPokemonInfo(data) {
-  // Clear the previous information if any
-  infoContainer.innerHTML = "";
-
-  // Create elements to display Pokémon information
-  const nameElement = document.createElement("h2");
-  nameElement.textContent = `Name: ${data.name}`;
-
-  const typesElement = document.createElement("p");
-  typesElement.textContent = `Types: ${data.types
-    .map((type) => type.type.name)
-    .join(", ")}`;
-
-  // Add more information elements as needed
-
-  // Append the elements to the info container
-  infoContainer.appendChild(nameElement);
-  infoContainer.appendChild(typesElement);
 }
 
 // Event listener for the "Fetch Cards" button
@@ -150,3 +151,6 @@ types.forEach((type) => {
   option.textContent = type;
   typeSelect.appendChild(option);
 });
+
+
+
